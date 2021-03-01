@@ -1,16 +1,30 @@
-import './index.css';
-import Navbar from './components/Navbar.js';
-import Home from './components/Home.js';
-import Summary from './components/Summary.js';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./index.css";
+import Navbar from "./components/Navbar.js";
+import Home from "./components/Home.js";
+import Summary from "./components/Summary.js";
+import Account from "./components/Account";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      {/* <Home /> */}
-      <Summary />
-      <div className="container mx-auto px-4"></div>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/summary">
+              <Summary />
+            </Route>
+            <Route exact path="/account">
+              <Account />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
   );
 }
 

@@ -1,10 +1,11 @@
-import { useState } from 'react';
-import { ReactComponent as Logo } from '../logo.svg';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ReactComponent as Logo } from "../logo.svg";
 
 const Navbar = () => {
-  const title = 'Clipex Wire Testing';
+  const title = "Clipex Wire Testing";
 
-  const [isActive, setActive] = useState('false');
+  const [isActive, setActive] = useState("false");
 
   const handleToggle = () => {
     setActive(!isActive);
@@ -42,30 +43,36 @@ const Navbar = () => {
       </div>
       <div
         className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${
-          isActive ? 'block' : 'hidden'
+          isActive ? "block" : "hidden"
         }`}
       >
         <div className="text-sm lg:flex-grow ">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="block mt-4 lg:inline-block lg:mt-0 text-blue-200 hover:text-white mr-4"
           >
             Home
-          </a>
-          <a
-            href="/#"
+          </Link>
+          <Link
+            to="/summary"
             className="block mt-4 lg:inline-block lg:mt-0 text-blue-200 hover:text-white mr-4"
           >
             New Results
-          </a>
+          </Link>
+          <Link
+            to="/account"
+            className="block mt-4 lg:inline-block lg:mt-0 text-blue-200 hover:text-white mr-4"
+          >
+            Account
+          </Link>
         </div>
         <div>
-          <a
-            href="/login"
+          <Link
+            to="/login"
             className="inline-block text-sm px-4 py-2 leading-none border rounded text-white font-normal border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 lg:mt-0"
           >
             Login
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
