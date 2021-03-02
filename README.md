@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was created for Clipex Wire Testing Resullts
+# This project was created for Clipex Wire Testing Resullts
 
 To start with the project run the commands
 
