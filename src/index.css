@@ -56,6 +56,15 @@
   .separator {
     @apply col-span-6 sm:col-span-3;
   }
+  .view-info-separator {
+    @apply px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6;
+  }
+  .view-info-separator:nth-child(odd) {
+    @apply bg-gray-50;
+  }
+  .view-info-separator:nth-child(even) {
+    @apply bg-white;
+  }
 
   .button-container {
     @apply px-4 py-3 bg-gray-50 text-right sm:px-6;
