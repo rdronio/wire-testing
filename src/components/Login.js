@@ -1,4 +1,4 @@
-import { ReactComponent as Logo } from '../logo.svg';
+import { ReactComponent as Logo } from "../logo.svg";
 const Login = () => {
   return (
     //     <!--
@@ -31,7 +31,7 @@ const Login = () => {
           <input type="hidden" name="remember" value="true" />
           <div className="rounded-md shadow-sm ">
             <div className="mt-2">
-              <label htmlFor="email-address">Email address</label>
+              <label htmlFor="email-address">Email</label>
               <input
                 id="email-address"
                 name="email"

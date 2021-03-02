@@ -6,6 +6,10 @@ To start with the project run the commands
 
 To download node modules
 
+### npm install @tailwindcss/forms
+
+To download tailwind forms
+
 ### npm install @craco/craco
 
 Needed for tailwind
