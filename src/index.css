@@ -1,24 +1,67 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
+  nav {
+    @apply flex items-center justify-between flex-wrap bg-blue-900 p-6;
+  }
+
   h1 {
     @apply font-semibold text-xl tracking-tight;
   }
   h2 {
-    @apply text-xl;
+    @apply mt-6 text-center text-3xl font-bold text-gray-900;
   }
   h3 {
-    @apply text-lg;
+    @apply text-lg font-medium leading-6 text-gray-900;
   }
 
-  nav {
-    @apply flex items-center justify-between flex-wrap bg-blue-900 p-6;
+  hr {
+    @apply my-3;
+  }
+
+  label {
+    @apply block text-sm font-medium text-gray-700;
+  }
+
+  input[type='text'] {
+    @apply appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm;
+  }
+
+  input[type='email'] {
+    @apply appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm;
+  }
+  input[type='password'] {
+    @apply appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm;
+  }
+  input[type='checkbox'] {
+    @apply h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded;
+  }
+
+  button[type='submit'] {
+    @apply group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+  }
+
+  select {
+    @apply mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm;
   }
 }
 
-@tailwind components;
-
 @layer components {
+}
+
+@layer utilities {
+  /* Form */
+  .separator {
+    @apply col-span-6 sm:col-span-3;
+  }
+
+  .button-container {
+    @apply px-4 py-3 bg-gray-50 text-right sm:px-6;
+  }
+
+  /* Navbar Utilities */
   nav #title-container {
     @apply flex items-center flex-shrink-0 text-white mr-6;
   }
@@ -37,6 +80,12 @@
   nav #login-button {
     @apply inline-block text-sm px-4 py-2 leading-none border rounded text-white font-normal border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 lg:mt-0;
   }
-}
 
-@tailwind utilities;
+  /* Login */
+  #login .remember-me {
+    @apply mt-0 ml-2 block text-sm text-gray-900;
+  }
+  #login .forgot-password {
+    @apply font-medium text-blue-600 hover:text-blue-500;
+  }
+}
