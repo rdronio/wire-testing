@@ -2,7 +2,7 @@ const Summary = () => {
   // const [];
 
   return (
-    <div className="summary p-6">
+    <div className="summary container mx-auto p-6">
       <table class="table-auto w-full text-left">
         <thead>
           <tr>
