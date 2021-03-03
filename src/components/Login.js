@@ -1,30 +1,13 @@
-import { ReactComponent as Logo } from '../logo.svg';
+import { ReactComponent as Logo } from "../logo.svg";
 const Login = () => {
   return (
-    //     <!--
-    //   This example requires Tailwind CSS v2.0+
-
-    //   This example requires some changes to your config:
-
-    //   ```
-    //   // tailwind.config.js
-    //   module.exports = {
-    //     // ...
-    //     plugins: [
-    //       // ...
-    //       require('@tailwindcss/htmlForms'),
-    //     ]
-    //   }
-    //   ```
-    // -->
-
     <section
       id="login"
       className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-md w-full space-y-8">
+      <div className="max-w-sm w-full space-y-8">
         <div>
-          <img src={Logo} alt="" srcset="" />
+          <img className="w-32" src={Logo} alt="" srcset="" />
           <h2>Sign in to your account</h2>
         </div>
         <htmlForm className="mt-8 space-y-6" action="#" method="POST">
