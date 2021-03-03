@@ -9,23 +9,28 @@ import Login from './components/Login';
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Navbar />
-        <div className="content ">
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/summary">
-              <Summary />
-            </Route>
-            <Route exact path="/account">
-              <Account />
-            </Route>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-          </Switch>
+      <div id="Clipex-Wire-Testing" className="App">
+        <div className="main-container">
+          <header>
+            <Navbar />
+          </header>
+          <main>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/summary">
+                <Summary />
+              </Route>
+              <Route exact path="/account">
+                <Account />
+              </Route>
+              <Route exact path="/login">
+                <Login />
+              </Route>
+            </Switch>
+          </main>
+          <footer></footer>
         </div>
       </div>
     </Router>

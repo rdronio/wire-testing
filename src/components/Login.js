@@ -1,4 +1,4 @@
-import { ReactComponent as Logo } from "../logo.svg";
+import { ReactComponent as Logo } from '../logo.svg';
 const Login = () => {
   return (
     //     <!--
@@ -18,7 +18,7 @@ const Login = () => {
     //   ```
     // -->
 
-    <div
+    <section
       id="login"
       className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
     >
@@ -89,7 +89,7 @@ const Login = () => {
           </div>
         </htmlForm>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -3,8 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  header {
+    @apply hidden z-20 fixed top-0 left-0 right-0 bg-gradient-to-b from-blue-800 via-blue-900 to-blue-900;
+  }
+
   nav {
-    @apply z-20 fixed top-0 left-0 right-0 flex items-center justify-between flex-wrap p-0 bg-gradient-to-b from-blue-800 via-blue-900 to-blue-900;
+  }
+
+  main {
+    @apply h-full w-full;
+  }
+
+  footer {
   }
 
   h1 {
@@ -25,21 +35,21 @@
     @apply block text-sm font-medium text-gray-700;
   }
 
-  input[type="text"] {
+  input[type='text'] {
     @apply appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm;
   }
 
-  input[type="email"] {
+  input[type='email'] {
     @apply appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm;
   }
-  input[type="password"] {
+  input[type='password'] {
     @apply appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm;
   }
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     @apply h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded;
   }
 
-  button[type="submit"] {
+  button[type='submit'] {
     @apply group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
   }
 
@@ -52,8 +62,12 @@
 }
 
 @layer utilities {
-  .content {
-    @apply h-5/6;
+  .App {
+    @apply h-screen relative;
+  }
+
+  .main-container {
+    @apply flex h-full;
   }
 
   /* Form */
@@ -89,8 +103,17 @@
   nav .link {
     @apply text-gray-300 hover:bg-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium;
   }
+
   nav .active {
-    @apply bg-gray-800 text-white;
+    @apply md:bg-gray-800 text-white;
+  }
+
+  nav .link i {
+    @apply text-2xl;
+  }
+
+  nav .link .link-label {
+    @apply hidden md:ml-2;
   }
 
   nav #login-button {
