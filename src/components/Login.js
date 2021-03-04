@@ -1,13 +1,11 @@
-import { ReactComponent as Logo } from "../logo.svg";
 const Login = () => {
   return (
     <section
       id="login"
-      className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen  flex items-center justify-center bg-gray-200 py-12 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-sm w-full space-y-8">
-        <div>
-          <img className="w-32" src={Logo} alt="" srcset="" />
+      <div className="md:bg-gray-50  md:p-10 md:shadow-lg max-w-sm w-full space-y-8 md:rounded-lg">
+        <div className=" relative items-center">
           <h2>Sign in to your account</h2>
         </div>
         <htmlForm className="mt-8 space-y-6" action="#" method="POST">

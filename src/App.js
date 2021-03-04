@@ -2,22 +2,29 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './index.css';
 import Navbar from './components/Navbar.js';
 import Home from './components/Home.js';
+import Dashboard from './components/Dashboard.js';
 import Summary from './components/Summary.js';
 import Account from './components/Account';
 import Login from './components/Login';
 
 function App() {
   return (
-    <Router>
-      <div id="Clipex-Wire-Testing" className="App">
-        <div className="main-container">
-          <header>
-            <Navbar />
-          </header>
-          <main>
-            <Switch>
-              <Route exact path="/">
-                <Home />
+    <div id="Clipex-Wire-Testing" className="App">
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <div className="main-container">
+            <header>
+              <Navbar />
+            </header>
+            <main>
+              <Route exact path="/dashboard">
+                <Dashboard />
               </Route>
               <Route exact path="/summary">
                 <Summary />
@@ -25,15 +32,12 @@ function App() {
               <Route exact path="/account">
                 <Account />
               </Route>
-              <Route exact path="/login">
-                <Login />
-              </Route>
-            </Switch>
-          </main>
-          <footer></footer>
-        </div>
-      </div>
-    </Router>
+            </main>
+            <footer></footer>
+          </div>
+        </Switch>
+      </Router>
+    </div>
   );
 }
 

@@ -3,11 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  header {
-    @apply hidden z-20 fixed top-0 left-0 right-0 bg-gradient-to-b from-blue-800 via-blue-900 to-blue-900;
-  }
-
   nav {
+  }
+  header {
+    @apply z-50 fixed top-0 left-0 right-0 bg-gradient-to-b from-blue-800 via-blue-900 to-blue-900;
   }
 
   main {
@@ -50,11 +49,11 @@
   }
 
   button[type='submit'] {
-    @apply group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+    @apply group relative w-full lg:max-w-xs flex justify-center  py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
   }
 
   select {
-    @apply mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm;
+    @apply mt-1 block w-full  py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm;
   }
 }
 
@@ -67,6 +66,10 @@
   }
 
   .main-container {
+    @apply flex h-full;
+  }
+
+  .card {
     @apply flex h-full;
   }
 
@@ -85,7 +88,7 @@
   }
 
   .button-container {
-    @apply px-4 py-3 bg-gray-50 text-right sm:px-6;
+    @apply px-4 py-3 bg-gray-50 text-right sm:px-6 flex justify-center justify-items-center;
   }
 
   /* Navbar Utilities */
@@ -113,7 +116,7 @@
   }
 
   nav .link .link-label {
-    @apply hidden md:ml-2;
+    @apply hidden md:inline-block md:ml-2;
   }
 
   nav #login-button {
