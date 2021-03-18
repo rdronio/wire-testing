@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard.js';
 import Summary from './components/Summary.js';
 import Account from './components/Account';
 import Login from './components/Login';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -33,7 +34,9 @@ function App() {
                 <Account />
               </Route>
             </main>
-            <footer></footer>
+            <footer>
+              <Footer />
+            </footer>
           </div>
         </Switch>
       </Router>

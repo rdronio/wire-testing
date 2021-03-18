@@ -55,6 +55,10 @@
   select {
     @apply mt-1 block w-full  py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm;
   }
+
+  footer {
+    @apply relative w-full items-center content-center text-center py-3;
+  }
 }
 
 @layer components {
@@ -66,7 +70,7 @@
   }
 
   .main-container {
-    @apply flex h-full;
+    @apply flex flex-col;
   }
 
   .card {
@@ -129,5 +133,10 @@
   }
   #login .forgot-password {
     @apply font-medium text-blue-600 hover:text-blue-500;
+  }
+
+  /* Footer */
+  #footer p {
+    @apply text-gray-400 text-sm;
   }
 }
