@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom';
-import background from '../images/Clipex-Wire-Testing.jpg';
-import logo from '../images/logo.png';
+import { Link } from "react-router-dom";
+import background from "../images/Clipex-Wire-Testing.jpg";
+import logo from "../images/logo.png";
 
 const Home = () => {
-  const title = 'Homepage';
+  const title = "Clipex Wire Testing System";
   const description =
-    'This site is for the data entry of Clipex Wire Testing Results';
-  const createdBy = 'CGC Team';
+    "This site is for the data entry of Clipex Wire Testing Results";
+  const createdBy = "CGC Team";
 
   const handleCTA = () => {
-    console.log('Clicked CTA');
+    console.log("Clicked CTA");
   };
 
   return (
@@ -19,7 +19,13 @@ const Home = () => {
       style={{ backgroundImage: `url(${background})` }}
     >
       <img className="w-80" src={logo} alt="Logo" />
-      <p className="p-4 text-3xl font-light">{description}</p>
+      <div>
+        <p className="py-0.5 text-3xl font-bold">{title}</p>
+        <p className="py-0.5 text-xl font-normal text-gray-400">
+          {description}
+        </p>
+      </div>
+
       <Link
         to="/login"
         id="login-button"
@@ -29,7 +35,7 @@ const Home = () => {
         Continue
       </Link>
 
-      <p className="p-4 text-sm shadow-inner text-gray-600 font-medium">
+      <p className="text-sm shadow-inner text-gray-600 font-medium">
         Created by: <span className="font-bold text-gray-500">{createdBy}</span>
       </p>
     </section>

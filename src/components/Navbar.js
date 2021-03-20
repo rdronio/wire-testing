@@ -1,18 +1,18 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from '../logo.svg';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ReactComponent as Logo } from "../logo.svg";
 
-import logo_clipex from '../images/logo.png';
-import logo from '../images/CWTS-Logo.png';
+import logo_clipex from "../images/logo.png";
+import logo from "../images/CWTS-Logo.png";
 
 const Navbar = () => {
-  const title = 'Clipex Wire Testing';
+  const title = "Clipex Wire Testing";
   // const [isActive, setActive] = useState('false');
-  const menu = document.querySelector('#mobile-menu');
+  const menu = document.querySelector("#mobile-menu");
+  const [toggleMenu, setToggleMenu] = useState();
 
   const handleToggle = () => {
-    // setActive(!isActive);
-    menu.classList.toggle('hidden');
+    menu.classList.toggle("hidden");
   };
 
   return (
@@ -47,7 +47,7 @@ const Navbar = () => {
               <img
                 src={logo}
                 alt="Clipex Wire Testing System Logo"
-                className="w-10"
+                className="w-10 shadow-lg border rounded-lg border-gray-300"
               />
             </div>
             <div className="hidden md:block">

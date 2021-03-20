@@ -1,12 +1,12 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './index.css';
-import Navbar from './components/Navbar.js';
-import Home from './components/Home.js';
-import Dashboard from './components/Dashboard.js';
-import Summary from './components/Summary.js';
-import Account from './components/Account';
-import Login from './components/Login';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./index.css";
+import Navbar from "./components/Navbar.js";
+import Home from "./components/Home.js";
+import Dashboard from "./components/Dashboard.js";
+import Summary from "./components/Summary.js";
+import Account from "./components/Account";
+import Login from "./components/Login";
+import Footer from "./components/Footer";
 
 function App() {
   return (
