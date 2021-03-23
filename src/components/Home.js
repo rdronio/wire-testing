@@ -1,15 +1,15 @@
-import { Link } from "react-router-dom";
-import background from "../images/Clipex-Wire-Testing.jpg";
-import logo from "../images/logo.png";
+import { Link } from 'react-router-dom';
+import background from '../images/Clipex-Wire-Testing.jpg';
+import logo from '../images/logo.png';
 
 const Home = () => {
-  const title = "Clipex Wire Testing System";
+  const title = 'Clipex Wire Testing System';
   const description =
-    "This site is for the data entry of Clipex Wire Testing Results";
-  const createdBy = "CGC Team";
+    'This site is for the data entry of Clipex Wire Testing Results';
+  const createdBy = 'CGC Team';
 
   const handleCTA = () => {
-    console.log("Clicked CTA");
+    console.log('Clicked CTA');
   };
 
   return (
