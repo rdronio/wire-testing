@@ -1,44 +1,61 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { ReactComponent as Logo } from "../logo.svg";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ReactComponent as Logo } from '../logo.svg';
 
-import logo_clipex from "../images/logo.png";
-import logo from "../images/CWTS-Logo.png";
+import logo from '../images/CWTS-logo-with-name-outlined.png';
 
 const Navbar = () => {
-  const title = "Clipex Wire Testing";
-  // const [isActive, setActive] = useState('false');
-  const menu = document.querySelector("#mobile-menu");
-  const [toggleMenu, setToggleMenu] = useState();
+  const title = 'Clipex Wire Testing';
+  const username = 'John Doe';
+  const email = 'johndoe@clipex.com';
 
-  const handleToggle = () => {
-    menu.classList.toggle("hidden");
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const handleToggleMenu = () => setToggleMenu(!toggleMenu);
+
+  const [navbarLinks, setNavbarLinks] = useState([
+    {
+      label: 'Dashboard',
+      type: 'centre',
+      path: '/dashboard',
+      cName: 'active',
+      icon: <i className="fas fa-tachometer-alt" title="Dashboard"></i>,
+    },
+    {
+      label: 'Reports',
+      type: 'centre',
+      path: '/summary',
+      cName: '',
+      icon: <i className="fas fa-table" title="Reports"></i>,
+    },
+
+    {
+      label: 'Your Profile',
+      type: 'user-menu',
+      path: '/profile',
+      cName: 'active',
+      icon: <i className="fas fa-tachometer-alt" title="Dashboard"></i>,
+    },
+    {
+      label: 'Settings',
+      type: 'user-menu',
+      path: '/settings',
+      cName: '',
+      icon: <i className="fas fa-table" title="Reports"></i>,
+    },
+    {
+      label: 'Sign out',
+      type: 'user-menu',
+      path: '/',
+      cName: '',
+      icon: <i className="fas fa-user-circle" title="Account"></i>,
+    },
+  ]);
+
+  const handleNavbarLinks = (index) => {
+    setNavbarLinks.cName = 'active';
   };
 
   return (
-    // <nav>
-    //   <Link to="/dashboard" className="link">
-    //     <i className="fas fa-tachometer-alt" title="Dashboard"></i>
-    //     <span className="link-label">Dashboard</span>
-    //   </Link>
-    //   <Link to="/summary" className="link">
-    //     <i className="fas fa-table" title="Reports"></i>
-    //     <span className="link-label">Reports</span>
-    //   </Link>
-
-    //   <Link to="/account" className="link">
-    //     <i className="fas fa-user-circle" title="Account"></i>
-    //     <span className="link-label">Account</span>
-    //   </Link>
-    //   <Link to="/login" id="login-button">
-    //     Login
-    //   </Link>
-    //   <Link to="/" className="link">
-    //     <i className="fas fa-sign-out-alt" title="Logout"></i>
-    //     <span className="link-label">Logout</span>
-    //   </Link>
-    // </nav>
-
     <nav>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -47,46 +64,26 @@ const Navbar = () => {
               <img
                 src={logo}
                 alt="Clipex Wire Testing System Logo"
-                className="w-10 shadow-lg border rounded-lg border-gray-300"
+                className="w-32 shadow-lg "
               />
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-                <a
-                  href="#"
-                  className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Dashboard
-                </a>
-
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Team
-                </a>
-
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Projects
-                </a>
-
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Calendar
-                </a>
-
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Reports
-                </a>
+                {navbarLinks
+                  .filter((item) => item.type === 'centre')
+                  .map((filteredItem, index) => {
+                    return (
+                      <Link
+                        to={filteredItem.path}
+                        key={index}
+                        className="nav-items-desktop"
+                        onClick={handleNavbarLinks(index)}
+                      >
+                        <span>{filteredItem.label}</span>
+                      </Link>
+                    );
+                  })}
               </div>
             </div>
           </div>
@@ -111,7 +108,6 @@ const Navbar = () => {
                   />
                 </svg>
               </button>
-
               {/* <!-- Profile dropdown --> */}
               <div className="ml-3 relative">
                 <div>
@@ -126,7 +122,6 @@ const Navbar = () => {
                 </div>
                 {/* <!--
                     Profile dropdown panel, show/hide based on dropdown state.
-
                     Entering: "transition ease-out duration-100"
                       From: "transform opacity-0 scale-95"
                       To: "transform opacity-100 scale-100"
@@ -147,7 +142,6 @@ const Navbar = () => {
                   >
                     Your Profile
                   </a>
-
                   <a
                     href="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -155,7 +149,6 @@ const Navbar = () => {
                   >
                     Settings
                   </a>
-
                   <a
                     href="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -174,12 +167,11 @@ const Navbar = () => {
               className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
               aria-controls="mobile-menu"
               aria-expanded="false"
-              onClick={handleToggle}
+              onClick={handleToggleMenu}
             >
               <span className="sr-only">Open main menu</span>
               {/* <!--
                   Heroicon name: outline/menu
-
                   Menu open: "hidden", Menu closed: "block"
                 --> */}
               <svg
@@ -199,7 +191,6 @@ const Navbar = () => {
               </svg>
               {/* <!--
                   Heroicon name: outline/x
-
                   Menu open: "block", Menu closed: "hidden"
                 --> */}
               <svg
@@ -223,44 +214,18 @@ const Navbar = () => {
       </div>
 
       {/* <!-- Mobile menu, show/hide based on menu state. --> */}
-      <div className="hidden md:hidden" id="mobile-menu">
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-          <a
-            href="#"
-            className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Dashboard
-          </a>
-
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Team
-          </a>
-
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Projects
-          </a>
-
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Calendar
-          </a>
-
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Reports
-          </a>
-        </div>
+      <div className={toggleMenu ? 'md:hidden ' : 'hidden'}>
+        <nav className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          {navbarLinks
+            .filter((item) => item.type === 'centre')
+            .map((filteredItem, index) => {
+              return (
+                <Link to={filteredItem.path} key={index} className="nav-items">
+                  <span>{filteredItem.label}</span>
+                </Link>
+              );
+            })}
+        </nav>
         <div className="pt-4 pb-3 border-t border-gray-700">
           <div className="flex items-center px-5">
             <div className="flex-shrink-0">
@@ -268,10 +233,10 @@ const Navbar = () => {
             </div>
             <div className="ml-3">
               <div className="text-base font-medium leading-none text-white">
-                Tom Cook
+                {username}
               </div>
               <div className="text-sm font-medium leading-none text-gray-400">
-                tom@example.com
+                {email}
               </div>
             </div>
             <button className="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
@@ -295,31 +260,23 @@ const Navbar = () => {
             </button>
           </div>
           <div className="mt-3 px-2 space-y-1">
-            <a
-              href="#"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-            >
-              Your Profile
-            </a>
-
-            <a
-              href="#"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-            >
-              Settings
-            </a>
-
-            <a
-              href="#"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-            >
-              Sign out
-            </a>
+            {navbarLinks
+              .filter((item) => item.type === 'user-menu')
+              .map((filteredItem, index) => {
+                return (
+                  <Link
+                    to={filteredItem.path}
+                    key={index}
+                    className="nav-items"
+                  >
+                    <span>{filteredItem.label}</span>
+                  </Link>
+                );
+              })}
           </div>
         </div>
       </div>
     </nav>
   );
 };
-
 export default Navbar;
