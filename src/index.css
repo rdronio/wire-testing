@@ -90,6 +90,10 @@
     @apply bg-gray-900 text-white;
   }
 
+  .user-menu {
+    @apply block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100;
+  }
+
   /* Form */
   .separator {
     @apply col-span-6 sm:col-span-3;
